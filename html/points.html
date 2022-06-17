@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../css/points.css">
+        <link rel="stylesheet" href="../css/allStyles.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../javascript/app.js"></script>
+        <title>ScoreBoard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="container mt-4">
+            <table class="shadow table table-light">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="footer" class="row fixed-bottom">
+                <a class="col-6" href="../index.html">
+                    <i class="bi bi-arrow-left-circle-fill float-start footer-buttons"></i>
+                </a>
+                <div class="col-6">
+                    <i onclick="addPlayer()" class="bi bi-plus-circle-fill float-end footer-buttons"></i>
+                </div>
+            </div>
+        </div>
+
+
+      <!-- MODALS -->
+        <!-- create a new modal to add players to list -->
+        
+        <div class="modal fade" id="new-player-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Player</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="player-name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="player-name">
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-cancel" class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                        <button id="btn-ok" class="btn btn-primary" type="button" data-bs-dismiss="modal">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="update-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Update Score</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <input type="text" class="form-control" id="update-input">
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="update-radio" id="add-radio" checked>
+                                    <label class="form-check-label" for="add-radio">
+                                    Add
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="update-radio" id="subtract-radio">
+                                    <label class="form-check-label" for="subtract-radio">
+                                    Subtract
+                                    </label>
+                                </div>        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="btn-cancel-update" class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                        <button id="btn-ok-update" class="btn btn-primary" type="button" data-bs-dismiss="modal">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

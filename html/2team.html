@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../css/2teamStyles.css">
+        <link rel="stylesheet" href="../css/allStyles.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../javascript/app.js"></script>
+        <title>ScoreBoard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="container">
+            <div id="team-container-row" class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card text-center">
+                        <div class="card-header h4 text-muted">
+                            Team 1
+                            <button onclick="removeTeam(this)" class="btn-close float-end fs-5" type="button"></button>
+                        </div>
+                        <div id="team1-score" class="card-body fs-1 team-score-body">
+                            0
+                        </div>
+                        <div class="row">
+                            <div onclick="teamBasedScoresIncrement(this)" class="col">
+                                <div class="pt-2 pb-2 h5 text-muted">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                </div>
+                            </div>
+                            <div onclick="teamBasedScoresDecrement(this)" class="col">
+                                <div class="pt-2 pb-2 h5 text-muted">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card text-center">
+                        <div class="card-header h4 text-muted">
+                            Team 2
+                            <button onclick="removeTeam(this)" class="btn-close float-end fs-5" type="button"></button>
+                        </div>
+                        <div id="team2-score" class="card-body fs-1 team-score-body">
+                            0
+                        </div>
+                        <div class="row">
+                            <div onclick="teamBasedScoresIncrement(this)" class="col">
+                                <div class="pt-2 pb-2 h5 text-muted">
+                                    <i class="bi bi-caret-up-fill"></i>
+                                </div>
+                            </div>
+                            <div onclick="teamBasedScoresDecrement(this)" class="col">
+                                <div class="pt-2 pb-2 h5 text-muted">
+                                    <i class="bi bi-caret-down-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer" class="row fixed-bottom bg-light">
+                <a class="col-4 border border-4 fs-5 text-muted button-options" href="../index.html">
+                    Back
+                </a>
+                <div data-bs-toggle="modal" data-bs-target="#restart-modal" class="col-4 border border-4 fs-5 text-muted button-options">
+                    Restart
+                </div>
+                <div onclick="addNewTeam()" class="col-4 border border-4 fs-5 text-muted button-options">
+                    Add new team...
+                </div>
+            </div>
+        </div>
+
+        <!-- MODALS -->
+        <div class="modal fade" id="restart-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Are you sure you want to restart?</h5>
+                        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        All current scores will be set back to 0.
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Go back</button>
+                        <button onclick="resetScores()" class="btn btn-primary" type="button" data-bs-dismiss="modal">Restart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

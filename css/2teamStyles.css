@@ -1,0 +1,51 @@
+@media screen and (max-width: 992px) {
+    #team-container-row {
+        margin-bottom: 30%;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 2200px) {
+    #team-container-row {
+        margin-bottom: 15%;
+    }
+}
+
+@media screen and (min-width: 2200px) {
+    #team-container-row {
+        margin-bottom: 10%;
+    }
+}
+
+#team1-score {
+    background-color: rgba(208, 99, 255, 0.5);
+}
+
+#team2-score {
+    background-color: rgba(255, 99, 128, 0.5); 
+}
+
+.card {
+    margin-top: 5%;
+}
+
+.col {
+    padding-bottom: 0;
+    display: block;
+}
+
+.team-score-body {
+    padding: 15%;
+}
+
+#footer {
+    text-align: center;
+}
+
+.button-options {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.button-options:hover {
+    cursor: pointer;
+}
